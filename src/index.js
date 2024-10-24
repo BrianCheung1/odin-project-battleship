@@ -1,2 +1,4 @@
 import "./style.css"
-import "./components/gameboard"
+import { setupGame } from "./components/ui"
+
+setupGame()
