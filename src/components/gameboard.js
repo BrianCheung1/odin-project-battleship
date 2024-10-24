@@ -33,14 +33,14 @@ class Gameboard {
   receiveAttack(x, y) {
     const target = this.board[x][y]
     if (target === "X") {
-      return false
-    } else if (target) {
+      return "Error"
+    } else if (target instanceof Ship) {
       target.hit()
       target.isSunk()
       this.board[x][y] = "X"
       return true
     } else {
-      this.board[x][y] = "X" // Mark miss on the board
+      this.board[x][y] = "X"
       return false
     }
   }
