@@ -9,10 +9,14 @@ class Player {
 
   makeMove(x, y, opponentBoard) {
     if (this.type === "Player") {
-      return opponentBoard.receiveAttack(x, y) 
+      return opponentBoard.receiveAttack(x, y)
     } else if (this.type === "Computer") {
-      return opponentBoard.receiveAttack(x, y) 
+      return opponentBoard.receiveAttack(x, y)
     }
+  }
+
+  placeShip(x, y, length) {
+    return this.board.placeShip(x, y, length)
   }
 }
 

@@ -15,7 +15,8 @@ class Gameboard {
   }
 
   placeShip(x, y, length) {
-    if (x + length > this.size || y >= this.size) {
+    console.log(this.board)
+    if (x > this.size || y + length >= this.size) {
       return false
     }
     const newShip = new Ship(length)
