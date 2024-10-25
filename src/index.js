@@ -1,4 +1,5 @@
 import "./style.css"
-import { setupGame } from "./components/ui"
+import { renderRestart, setupGame } from "./components/ui"
 
 setupGame()
+renderRestart()

@@ -1,18 +1,15 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 0px;
   padding: 0px;
-}
-
-h1 {
-  margin-bottom: 20px;
+  background-color: rebeccapurple;
 }
 
 #game {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   justify-content: space-evenly;
@@ -23,7 +20,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(10, 40px);
   grid-template-rows: repeat(10, 40px);
-  gap: 2px;
+  box-sizing: border-box;
 }
 
 .cell {
@@ -45,16 +42,48 @@ h1 {
 }
 
 .ship {
-  background-color: blue;
+  background-color: green;
   cursor: move;
-  width: 40px;
+  display: flex;
+  padding: 0;
+  margin: 0;
   height: 40px;
 }
 
-.dropzone {
-  border: 2px dashed #333;
+.ship-part {
+  width: 40px;
+  height: 40px;
+  background-color: green; /* Color for ship parts */
+  border: none;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
-#ships-container {
-    display: flex
+.dropzone {
+  border: 2px dashed green;
+}
+
+#ships-container,
+#ships-container-player2 {
+  display: flex;
+  flex-wrap: wrap; /* Ensure ships wrap to the next row */
+  gap: 5px; /* Space between ships */
+  width: 100%; /* Take full width */
+  max-width: 400px; /* Set a maximum width */
+  padding: 0;
+  margin-top: 10px; /* Space between ships and the board */
+  min-height: 160px; /* Set a minimum height to keep alignment */
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column; /* Stack board and ships vertically */
+  align-items: center; /* Center elements horizontally */
+}
+
+.players {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 10px;
 }

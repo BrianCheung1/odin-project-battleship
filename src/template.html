@@ -7,12 +7,20 @@
   </head>
   <body>
     <div id="game">
-      <div id="turn-display"></div>
-      <div>
-        <div id="player1-board" class="board"></div>
-        <div id="ships-container"></div>
+      <div id="turn-display">Place all ships to start game</div>
+      <button id="restart-button">Restart Game</button>
+
+      <div class="players">
+        <div class="player-container">
+          <div id="player1-board" class="board"></div>
+          <button id="rotate-button">Rotate Ship</button>
+          <div id="ships-container"></div>
+        </div>
+        <div class="player-container">
+          <div id="player2-board" class="board"></div>
+          <div id="ships-container-player2"></div>
+        </div>
       </div>
-      <div id="player2-board" class="board"></div>
     </div>
   </body>
 </html>

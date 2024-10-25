@@ -15,8 +15,8 @@ class Player {
     }
   }
 
-  placeShip(x, y, length) {
-    return this.board.placeShip(x, y, length)
+  placeShip(x, y, length, orientation) {
+    return this.board.placeShip(x, y, length, orientation)
   }
 }
 

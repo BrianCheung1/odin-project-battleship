@@ -14,19 +14,35 @@ class Gameboard {
     return this.board
   }
 
-  placeShip(x, y, length) {
-    console.log(this.board)
-    if (x > this.size || y + length >= this.size) {
+  placeShip(x, y, length, orientation) {
+    // Check if the position is within bounds based on orientation
+    if (
+      (orientation === "horizontal" &&
+        (y + length - 1 >= this.size || x >= this.size)) ||
+      (orientation === "vertical" &&
+        (x + length - 1 >= this.size || y >= this.size))
+    ) {
       return false
     }
+
     const newShip = new Ship(length)
+
+    // Check for existing ships in the specified position
     for (let i = 0; i < length; i++) {
-      if (this.board[x][y + i] !== null) {
+      if (
+        (orientation === "horizontal" && this.board[x][y + i] !== null) ||
+        (orientation === "vertical" && this.board[x + i][y] !== null)
+      ) {
         return false
       }
     }
+    // Place the ship on the board
     for (let i = 0; i < length; i++) {
-      this.board[x][y + i] = newShip
+      if (orientation === "horizontal") {
+        this.board[x][y + i] = newShip // Place ship horizontally
+      } else {
+        this.board[x + i][y] = newShip // Place ship vertically
+      }
     }
     return true
   }
