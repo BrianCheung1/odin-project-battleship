@@ -14,7 +14,7 @@ test("gameboard size", () => {
 
 test("gameboard ship placement", () => {
   gameboard.createBoard()
-  gameboard.placeShip(0, 0, 5)
+  gameboard.placeShip(0, 0, 5, "horizontal")
   expect(gameboard.board[0][0]).toBeInstanceOf(Ship)
   expect(gameboard.board[0][1]).toBeInstanceOf(Ship)
   expect(gameboard.board[0][2]).toBeInstanceOf(Ship)
@@ -24,7 +24,7 @@ test("gameboard ship placement", () => {
 })
 
 test("gameboard receive attack", () => {
-  gameboard.placeShip(0, 0, 5)
+  gameboard.placeShip(0, 0, 5, "horizontal")
   gameboard.receiveAttack(0, 0)
   gameboard.receiveAttack(1, 1)
   expect(gameboard.board[0][0]).toBe("X")
@@ -36,8 +36,8 @@ test("gameboard receive attack", () => {
 })
 
 test("all ships sunk", () => {
-  gameboard.placeShip(0, 0, 5)
-  gameboard.placeShip(1, 1, 3)
+  gameboard.placeShip(0, 0, 5, "horizontal")
+  gameboard.placeShip(1, 1, 3, "horizontal")
   gameboard.receiveAttack(0, 0)
   gameboard.receiveAttack(0, 1)
   gameboard.receiveAttack(0, 2)

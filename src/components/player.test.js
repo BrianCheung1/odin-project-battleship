@@ -17,12 +17,12 @@ test("Initial Players", () => {
   expect(player2.board).toBeInstanceOf(Gameboard)
 })
 
-test("Real Player moves", ()=> {
-    const result = player1.makeMove(0, 0)
-    expect(result).toBeDefined()
+test("Real Player moves", () => {
+  const result = player1.makeMove(0, 0, player2.board)
+  expect(result).toBeDefined()
 })
 
-test("Computer Makes a move", ()=> {
-    const result = player2.makeMove()
-    expect(result).toBeDefined()
+test("Computer Makes a move", () => {
+  const result = player2.makeMove(0, 0, player1.board)
+  expect(result).toBeDefined()
 })
