@@ -89,7 +89,7 @@ function renderBoard(board, elementId) {
 
       // Display ships
       if (board.board[x][y] instanceof Ship) {
-        cell.classList.add("ship")
+        cell.classList.add("ship-enemy")
       }
 
       boardElement.appendChild(cell)
