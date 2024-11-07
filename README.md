@@ -33,4 +33,4 @@ Contributors names and contact info
 
 Links
 
-- [Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-battleship)
+- [Odin Project](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-homepage)
